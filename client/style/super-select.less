@@ -1,0 +1,100 @@
+/*
+ * This following is because you can't change the opacity of a background
+ * that's already set.  So now you loop through all the colors, and set them
+ * manually
+ */
+@import "colors";
+
+@normalFade: 10%;
+@hoverFade: 10%;
+@focusFade: 30%;
+
+.make-color-classes(@colors) {
+   .iter(length(@colors));
+   .iter(@i) when (@i > 0) {
+      .iter(@i - 1);
+      @pair: extract(@colors, @i);
+      @key: extract(@pair, 1);
+      @value: extract(@pair, 2);
+      .@{key} {
+         &:hover {
+            background-color: fade(@value, @hoverFade);
+         }
+         &.selection {
+            background-color: fade(@value, 40%);         }
+
+         &:focus {
+            background-color: fade(@value, @focusFade);
+         }
+      }
+   }
+}
+
+.make-color-classes(@colors);
+/******************************************************************************/
+
+.super-select {
+   border: 1px solid #eee; // same colour as parent, in order not to mess with spacing when focused
+   background: #fff;
+   display: flex;
+   min-width: 200px;
+   overflow: hidden;
+   flex-grow: 1;
+   &:hover {
+      border: 1px solid #ddd;
+   }
+   &.focused {
+      border: 1px solid #ccc;
+   }
+}
+.super-select--search {
+   padding: 10px 5px;
+   outline: none;
+   border: none;
+   font-size: inherit;
+   flex: 1;
+   min-width: 140px;
+}
+.super-select--matches {
+   display: inline-flex;
+   align-items: center;
+   transition: width 1s;
+   margin-right: 5px;
+   .match {
+      padding: 5px;
+      margin: 0 5px;
+      color: #555;
+      cursor: pointer;
+      animation-name: fadeInDown;
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+      outline: none;
+   }
+}
+.selections {
+   .selection {
+      padding: 5px;
+      margin: 0 5px;
+      display: flex;
+      align-items: center;
+      border-radius: 10px;
+      .material-icons {
+         font-size: 17px;
+         cursor: pointer;
+      }
+      .name {
+         margin-left: 2px;
+      }
+   }
+}
+
+@keyframes fadeInDown {
+   0% {
+      opacity: 0;
+      transform: translateY(-20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}

@@ -1,0 +1,110 @@
+body {
+   font-family: 'Roboto', sans-serif;
+   font-size: 16px;
+   margin: 0;
+   height: 100%;
+
+}
+#app {
+   height: 100%;
+}
+.app {
+   height: 100%;
+}
+
+.body {
+   overflow-x: scroll;
+   width: auto;
+      white-space: nowrap;
+}
+
+.tt {
+   width: 200px;
+   height: 200px;
+   background: red;
+   margin: 100px 20px;
+   display: inline-block;
+}
+html {
+   height: 100%;
+}
+
+.header {
+   width: 100%;
+   position: fixed;
+   top: 0;
+
+   .top {
+      padding: 4px 5px;
+      display: flex;
+      align-items: center;
+
+      background: #f0f0f0;
+   }
+   .bottom {
+      padding: 0 4px 6px 4px;
+      display: flex;
+      align-items: center;
+      background: #f0f0f0;
+   }
+ }
+
+.logo {
+   // font-size: 20px;
+   // margin: 0 10px;
+   // font-weight: 900;
+
+   img {
+      height: 40px;
+      margin: 0 10px 0 6px;
+      cursor: pointer;
+   }
+
+}
+@media only screen and (max-width: 600px) {
+   .logo img {
+      display: none;
+   }
+}
+
+
+.account {
+   display: flex;
+   align-items: center;
+   margin: 0 10px 0 5px;
+   .material-icons {
+      font-size: 30px;
+      cursor: pointer;
+      &:hover {
+         font-size: 34px;
+         margin: 0 -2px 0 -2px;
+      }
+   }
+}
+
+.header--right {
+   display: flex;
+   align-items: center;
+   margin-left: auto;
+   padding-left: 10px;
+}
+
+.view {
+   display: flex;
+   align-items: center;
+   .material-icons {
+      font-size: 26px;
+      cursor: pointer;
+      padding: 5px;
+      color: #333;
+      &.selected {
+         color: #fff;
+         background: #000;
+      }
+   }
+}
+
+.body {
+   background: #aaa;
+   height: 100%;
+}
