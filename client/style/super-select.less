@@ -34,21 +34,21 @@
 /******************************************************************************/
 
 .super-select {
-   border: 1px solid #eee; // same colour as parent, in order not to mess with spacing when focused
+   border: 1px solid #ccc; // same colour as parent, in order not to mess with spacing when focused
    background: #fff;
    display: flex;
    min-width: 200px;
    overflow: hidden;
    flex-grow: 1;
    &:hover {
-      border: 1px solid #ddd;
+      border: 1px solid #bbb;
    }
    &.focused {
-      border: 1px solid #ccc;
+      border: 1px solid #99b;
    }
 }
 .super-select--search {
-   padding: 10px 5px;
+   padding: 5px;
    outline: none;
    border: none;
    font-size: inherit;
@@ -74,7 +74,7 @@
 .selections {
    .selection {
       padding: 5px;
-      margin: 0 5px;
+      margin: 0 5px 3px 5px;
       display: flex;
       align-items: center;
       border-radius: 10px;

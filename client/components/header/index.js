@@ -9,33 +9,33 @@ export default class Header extends Component {
    constructor() {
       super();
       this.state = {
-         selections: [],
          search: ""
       };
    }
-   addSelection(tag) {
-      const { selections, tags } = this.state;
-      this.setState({ selections: [ ...selections, tag ], search: "" });
-   }
-   removeSelection(selection) {
-      const { selections } = this.state;
-      const newSelections = selections.filter(s => s._id != selection._id);
-      this.setState({ selections: newSelections });
+   addSelection(selection) {
+      this.setSearch("");
+      this.props.addSelection(selection);
    }
    setSearch(search) {
       this.setState({ search });
    }
    render() {
-      const { selections, search } = this.state;
+      const { search } = this.state;
+      const { selections } = this.props;
       return (
          <div class="header">
-            <div class="top">
-               <Logo />
+            <div class="header--top">
+               <i
+                  class="material-icons"
+                  style={{margin: "0 10px 0 6px"}}
+                  onClick={() => this.setView("list")}
+               >
+                  add_box
+               </i>
                <SelectSearch
                   selections={selections}
                   search={search}
                   setSearch={this.setSearch.bind(this)}
-
                   addSelection={this.addSelection.bind(this)}
                />
                <div class="header--right">
@@ -44,7 +44,10 @@ export default class Header extends Component {
                </div>
             </div>
             <div>
-               <Selections selections={selections} removeSelection={this.removeSelection.bind(this)}/>
+               <Selections
+                  selections={selections}
+                  removeSelection={this.props.removeSelection}
+               />
             </div>
          </div>
       );

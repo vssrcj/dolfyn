@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class Selections extends Component {
+export default class NewItem extends Component {
 
    renderSelections() {
       const { selections } = this.props;
@@ -25,9 +25,7 @@ export default class Selections extends Component {
    }
    render() {
       return (
-         <div class="selections">
-
-            {this.renderSelections()}
+         <div class="card-3">
          </div>
       );
    }

@@ -2,50 +2,59 @@ body {
    font-family: 'Roboto', sans-serif;
    font-size: 16px;
    margin: 0;
-   height: 100%;
+   overflow-x: scroll;
 
-}
-#app {
-   height: 100%;
-}
-.app {
-   height: 100%;
+
+   width: auto;
+      white-space: nowrap;
+      overflow-y: hidden;
 }
 
 .body {
-   overflow-x: scroll;
-   width: auto;
-      white-space: nowrap;
+   background: #aaa;
+   height: 100%;
+   margin-top: 52px;
+   &.has-selections {
+      margin-top: 90px;
+   }
+}
+
+.q {
+   width: 400px;
+   display: inline-block;
+   margin-right: 10px;
 }
 
 .tt {
-   width: 200px;
-   height: 200px;
    background: red;
-   margin: 100px 20px;
-   display: inline-block;
 }
-html {
-   height: 100%;
+.a {
+   border-bottom: 1px solid #fff;
+}
+.card-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .header {
-   width: 100%;
+   width: 100vw;
    position: fixed;
    top: 0;
+   -webkit-backface-visibility: hidden;
 
-   .top {
+   .header--top {
       padding: 4px 5px;
       display: flex;
       align-items: center;
-
-      background: #f0f0f0;
+      height: 52px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #ddd;
+      //background: #f0f0f0;
    }
    .bottom {
-      padding: 0 4px 6px 4px;
+      height: 38px;
       display: flex;
       align-items: center;
-      background: #f0f0f0;
+      //background: #f0f0f0;
    }
  }
 
@@ -102,9 +111,4 @@ html {
          background: #000;
       }
    }
-}
-
-.body {
-   background: #aaa;
-   height: 100%;
 }
