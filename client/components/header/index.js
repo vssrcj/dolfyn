@@ -3,7 +3,6 @@ import Logo from "./logo";
 import SelectSearch from "./select-search";
 import View from "./view";
 import Account from "./account";
-import Selections from "./selections";
 
 export default class Header extends Component {
    constructor() {
@@ -44,10 +43,6 @@ export default class Header extends Component {
                </div>
             </div>
             <div>
-               <Selections
-                  selections={selections}
-                  removeSelection={this.props.removeSelection}
-               />
             </div>
          </div>
       );

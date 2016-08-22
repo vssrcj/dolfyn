@@ -30,6 +30,7 @@ class SelectSearch extends Component {
             onKeyDown={(event) => this.onMatchKeyDown(event.keyCode, match)}
             onClick={(event) => {
                this.props.addSelection(match);
+               ReactDOM.findDOMNode(this.refs.search).focus();
             }}
             tabIndex="0"
          >
@@ -43,6 +44,7 @@ class SelectSearch extends Component {
       }
       else if(keyCode == 13){
          this.props.addSelection(match);
+         ReactDOM.findDOMNode(this.refs.search).focus();
       }
    }
    setSearchFocus(searchHasFocus) {

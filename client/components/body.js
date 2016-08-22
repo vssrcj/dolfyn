@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import _ from "lodash";
 import NewItem from "./new-item";
+import Selections from "./selections";
 
 const colors = ["red","blue","yellow", "green", "black", "grey", "orange", "pink"];
 
@@ -22,8 +23,6 @@ export default class Body extends Component {
       ref.addEventListener("DOMMouseScroll", this.scrollHorizontally.bind(this), false);
     }
 
-
-
    render() {
       let heightMinus, bodyClass;
       if(this.props.hasSelections) {
@@ -37,11 +36,16 @@ export default class Body extends Component {
 
       const height = window.document.documentElement.clientHeight - heightMinus;
          console.log(height, window.innerHeight, document.body.clientHeight);
+         const { selections } = this.props;
+
       return (
          <div class={bodyClass} ref="body" style={{height}}>
-            <div>
-               {_.times(10, (i) => <div class="a">{i} index</div>)}
-            </div>
+
+               <Selections
+                  selections={selections}
+                  removeSelection={this.props.removeSelection}
+               />
+            <div class={`content${selections.length > 0 ? " has-selections" : ""}`}>
             <div class="q">
                <NewItem />
             </div>
@@ -56,6 +60,7 @@ export default class Body extends Component {
                </div>
             }
             )}
+            </div>
          </div>
       )
    }

@@ -72,18 +72,44 @@
    }
 }
 .selections {
+   display: inline-flex;
+   flex-direction: column;
+   position: fixed;
+   width: 100px;
+   height: 100%;
+   background: #fff;
+   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+   z-index: 1;
+
+   cursor: pointer;
    .selection {
-      padding: 5px;
-      margin: 0 5px 3px 5px;
+
       display: flex;
       align-items: center;
-      border-radius: 10px;
+      padding-left: 17px;
+
+      &:hover {
+         padding-left: 0px;
+         background: #eee;
+         .material-icons {
+            display: inline-block;
+         }
+         .name {
+            overflow-x: visible;
+            background: #eee;
+         }
+      }
       .material-icons {
-         font-size: 17px;
-         cursor: pointer;
+         font-size: 14px;
+         display: none;
+         margin-left: 3px;
       }
       .name {
          margin-left: 2px;
+         padding: 8px 0;
+         background: #fff;
+         text-overflow: ellipsis;
+         overflow-x: hidden;
       }
    }
 }

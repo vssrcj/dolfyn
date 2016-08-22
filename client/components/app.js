@@ -24,11 +24,12 @@ export default class App extends Component {
          <div class="app">
             <Header
                addSelection={this.addSelection.bind(this)}
-               removeSelection={this.removeSelection.bind(this)}
                selections={selections}
+
             />
             <Body
-               hasSelections={selections.length > 0}
+               selections={selections}
+               removeSelection={this.removeSelection.bind(this)}
             />
          </div>
       );
