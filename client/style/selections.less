@@ -1,0 +1,40 @@
+@import "./constants";
+
+.selections {
+   display: inline-flex;
+   flex-direction: column;
+   background: @main-background;
+   position: fixed;
+   width: 100px;
+   height: 100%;
+   border-right: 2px solid @selections-border;
+   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+   z-index: 2;
+}
+.selection {
+   display: flex;
+   align-items: center;
+   padding-left: 17px;
+   color: #9da5b4;
+   &:hover {
+      padding-left: 0px;
+      .material-icons {
+         display: inline-block;
+      }
+      .name {
+         overflow-x: visible;
+         background: #eee;
+      }
+   }
+   .material-icons {
+      font-size: 14px;
+      display: none;
+      margin-left: 3px;
+   }
+   .name {
+      margin-left: 2px;
+      padding: 8px 0;
+      text-overflow: ellipsis;
+      overflow-x: hidden;
+   }
+}

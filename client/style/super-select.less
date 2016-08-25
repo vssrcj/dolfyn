@@ -16,7 +16,7 @@
       @pair: extract(@colors, @i);
       @key: extract(@pair, 1);
       @value: extract(@pair, 2);
-      .@{key} {
+      .color-@{key} {
          &:hover {
             background-color: fade(@value, @hoverFade);
          }
@@ -47,72 +47,8 @@
       border: 1px solid #99b;
    }
 }
-.super-select--search {
-   padding: 5px;
-   outline: none;
-   border: none;
-   font-size: inherit;
-   flex: 1;
-   min-width: 140px;
-}
-.super-select--matches {
-   display: inline-flex;
-   align-items: center;
-   transition: width 1s;
-   margin-right: 5px;
-   .match {
-      padding: 5px;
-      margin: 0 5px;
-      color: #555;
-      cursor: pointer;
-      animation-name: fadeInDown;
-      animation-duration: 0.5s;
-      animation-fill-mode: both;
-      outline: none;
-   }
-}
-.selections {
-   display: inline-flex;
-   flex-direction: column;
-   position: fixed;
-   width: 100px;
-   height: 100%;
-   background: #fff;
-   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-   z-index: 1;
 
-   cursor: pointer;
-   .selection {
 
-      display: flex;
-      align-items: center;
-      padding-left: 17px;
-
-      &:hover {
-         padding-left: 0px;
-         background: #eee;
-         .material-icons {
-            display: inline-block;
-         }
-         .name {
-            overflow-x: visible;
-            background: #eee;
-         }
-      }
-      .material-icons {
-         font-size: 14px;
-         display: none;
-         margin-left: 3px;
-      }
-      .name {
-         margin-left: 2px;
-         padding: 8px 0;
-         background: #fff;
-         text-overflow: ellipsis;
-         overflow-x: hidden;
-      }
-   }
-}
 
 @keyframes fadeInDown {
    0% {

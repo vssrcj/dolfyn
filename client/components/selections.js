@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import { SELECTIONS_WIDTH } from "../constants";
 
 export default class Selections extends Component {
 
@@ -12,15 +13,13 @@ export default class Selections extends Component {
       );
 
       else return (
-         <div class="selections" ref="selections">
+         <div class="selections" style={{ width: SELECTIONS_WIDTH }} ref="selections">
             {selections.map(selection => (
                <div
                   class="selection"
                   key={selection._id}
                >
-               <i
-                  class={`material-icons`}
-               >close</i>
+                  <i class="material-icons">close</i>
                   <div class="name">{selection.name}</div>
                </div>
             ))}

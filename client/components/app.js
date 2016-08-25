@@ -25,7 +25,6 @@ export default class App extends Component {
             <Header
                addSelection={this.addSelection.bind(this)}
                selections={selections}
-
             />
             <Body
                selections={selections}

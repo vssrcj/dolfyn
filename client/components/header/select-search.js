@@ -57,8 +57,9 @@ class SelectSearch extends Component {
       const { searchHasFocus } = this.state;
       const { setSearch, search } = this.props;
       return (
-         <form onSubmit={this.onFormSubmit} class={`super-select${searchHasFocus ? ' focused' : ''}`}>
+         <form onSubmit={this.onFormSubmit} class={`select-search${searchHasFocus ? ' focused' : ''}`}>
             <input
+               class="select-search-input"
                type="text"
                ref="search"
                tabIndex="0"
@@ -67,9 +68,8 @@ class SelectSearch extends Component {
                onFocus={() => this.setSearchFocus(true) }
                onBlur={() => this.setSearchFocus(false) }
                onChange={event => setSearch(event.target.value) }
-               class="super-select--search"
             />
-            <div class="super-select--matches">
+            <div class="matches">
                {this.renderMatches()}
             </div>
          </form>

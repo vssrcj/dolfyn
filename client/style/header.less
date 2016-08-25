@@ -1,0 +1,77 @@
+@import "./constants";
+
+.header {
+   width: 100vw;
+   background: @main-background;
+   border-bottom: 2px solid rgb(24,26,31);
+   color: @main-color;
+   position: fixed;
+   top: 0;
+   -webkit-backface-visibility: hidden;
+   display: flex;
+   align-items: center;
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   z-index: 1;
+}
+.header--add-selection {
+   margin: 0 10px;
+   color: @highlight-color;
+}
+
+.account {
+   color: @account-color;
+}
+
+.select-search {
+   border: 1px solid @search-background; // must have border, in order not to mess with spacing when focused
+   background: @search-background;
+   display: flex;
+   min-width: 200px;
+   overflow: hidden;
+   flex-grow: 1;
+   &:hover {
+      border-color: @search-hover-border-color;
+   }
+   &.focused {
+      .select-search-input {
+         color: @search-focus-color;
+      }
+      border-color: @search-focus-border-color;
+   }
+}
+.select-search-input {
+   background: @search-background;
+   color: @search-color;
+   padding: 5px;
+   outline: none;
+   border: none;
+   font-size: inherit;
+   flex: 1;
+   min-width: 140px;
+}
+.matches {
+   display: inline-flex;
+   align-items: center;
+   transition: width 1s;
+}
+.match {
+   display: flex;
+   align-items: center;
+   padding: 0 8px;
+
+   height: 100%;
+   vertical-align: middle;
+   background: rgba(0,255,0,0.15);
+   color: white;
+   &:hover {
+      background: rgba(0,255,0,0.6);
+   }
+   cursor: pointer;
+   animation-name: fadeInDown;
+   animation-duration: 0.5s;
+   animation-fill-mode: both;
+   outline: none;
+}
+.match + .match {
+   margin-left: 10px;
+}
