@@ -1,0 +1,50 @@
+@import "./constants";
+
+.select-search {
+   background: @search-background;
+   display: flex;
+   min-width: 200px;
+   overflow: hidden;
+   flex-grow: 1;
+   &:hover {
+      border-color: @search-hover-border-color;
+   }
+   &.focused {
+      .select-search-input {
+         color: @search-focus-color;
+      }
+      border-color: @search-focus-border-color;
+   }
+   .select-search-input {
+      background: @search-background;
+      background: rgba(0,0,0,0.5);
+      color: @search-color;
+      padding: 5px;
+      outline: none;
+      border: none;
+      font-size: inherit;
+      flex: 1;
+      min-width: 140px;
+   }
+   .matches {
+      background: rgba(0,0,0,0.5);
+      display: inline-flex;
+      align-items: center;
+      transition: width 1s;
+   }
+   .match {
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      height: 100%;
+      vertical-align: middle;
+      cursor: pointer;
+      animation-name: fadeInDown;
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+      outline: none;
+      &+.match {
+         margin-left: 10px;
+      }
+   }
+}

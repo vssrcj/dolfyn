@@ -1,66 +1,14 @@
 @import "./constants";
 
+html {
+   background: @main-background;
+}
+
 body {
    font-family: 'Roboto', sans-serif;
    font-size: 16px;
    margin: 0;
-   //overflow-x: scroll;
    width: auto;
    white-space: nowrap;
    overflow-y: hidden;
-}
-
-
-.logo {
-   // font-size: 20px;
-   // margin: 0 10px;
-   // font-weight: 900;
-
-   img {
-      height: 40px;
-      margin: 0 10px 0 6px;
-      cursor: pointer;
-   }
-
-}
-@media only screen and (max-width: 600px) {
-   .logo img {
-      display: none;
-   }
-}
-
-
-.account {
-   display: flex;
-   align-items: center;
-   margin: 0 10px 0 5px;
-   .material-icons {
-      font-size: 30px;
-      cursor: pointer;
-      &:hover {
-         font-size: 34px;
-         margin: 0 -2px 0 -2px;
-      }
-   }
-}
-
-.header--right {
-   display: flex;
-   align-items: center;
-   margin-left: auto;
-   padding-left: 10px;
-}
-
-.view {
-   display: flex;
-   align-items: center;
-   .material-icons {
-      font-size: 26px;
-      cursor: pointer;
-      padding: 5px;
-      color: #9da5b4;
-      &.selected {
-         color: #e2c08d;
-      }
-   }
 }

@@ -5,8 +5,8 @@
  */
 @import "colors";
 
-@normalFade: 10%;
-@hoverFade: 10%;
+@normalFade: 70%;
+@hoverFade: 100%;
 @focusFade: 30%;
 
 .make-color-classes(@colors) {
@@ -17,14 +17,18 @@
       @key: extract(@pair, 1);
       @value: extract(@pair, 2);
       .color-@{key} {
+         color: fade(@value, @normalFade);
          &:hover {
-            background-color: fade(@value, @hoverFade);
+            color: fade(@value, @hoverFade);
+            //background-color: fade(@value, @hoverFade);
          }
          &.selection {
-            background-color: fade(@value, 40%);         }
-
+            color: fade(@value, @hoverFade);
+            //background-color: fade(@value, 40%);         }
+         }
          &:focus {
-            background-color: fade(@value, @focusFade);
+            color: fade(@value, @hoverFade);
+            //background-color: fade(@value, @focusFade);
          }
       }
    }

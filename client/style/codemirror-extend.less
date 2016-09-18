@@ -1,0 +1,34 @@
+@import "./constants";
+
+.CodeMirror {
+   //background: inherit !important;
+   color: @main-focus-color !important;
+   //height: ~"calc(100vh - 94px)" !important;
+   height: auto !important;
+   padding-bottom: 8px;
+   background: #191b1f;
+   //border: 1px solid #444;
+}
+.CodeMirror-gutters {
+   background: inherit !important;
+   border: none !important;
+}
+.cm-s-default .cm-header {
+   color: #6565e8 !important;
+}
+.cm-s-default .cm-variable-2 {
+   color: #65baf9 !important;
+}
+.cm-s-default .cm-link {
+   color: #24ce89;
+}
+
+.CodeMirror-scroll {
+   cursor: text;
+}
+.CodeMirror-cursor {
+   border-left: 1px solid @main-focus-color !important;
+}
+.CodeMirror-selected {
+   background: @search-hover-border-color !important;
+}

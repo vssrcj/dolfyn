@@ -25,7 +25,7 @@ class SelectSearch extends Component {
    renderMatches() {
       return this.props.matches.map(match =>
          <div
-            class={`match ${match.color}`}
+            class={`match color-${match.color}`}
             key={match._id}
             onKeyDown={(event) => this.onMatchKeyDown(event.keyCode, match)}
             onClick={(event) => {

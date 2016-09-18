@@ -4,6 +4,9 @@ import { SELECTIONS_WIDTH } from "../constants";
 
 export default class Selections extends Component {
 
+
+
+
    render() {
 
       const { selections } = this.props;
@@ -16,8 +19,9 @@ export default class Selections extends Component {
          <div class="selections" style={{ width: SELECTIONS_WIDTH }} ref="selections">
             {selections.map(selection => (
                <div
-                  class="selection"
+                  class={`selection color-${selection.color}`}
                   key={selection._id}
+                  onClick={() => this.props.removeSelection(selection)}
                >
                   <i class="material-icons">close</i>
                   <div class="name">{selection.name}</div>

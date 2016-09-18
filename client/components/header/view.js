@@ -13,6 +13,7 @@ export default class View extends Component {
    }
    render() {
       const { view } = this.state;
+      return null;
       return (
          <div class="view">
             <i
@@ -20,12 +21,12 @@ export default class View extends Component {
                onClick={() => this.setView("list")}
             >list</i>
             <i
-               class={`material-icons${view == "view_list" ? " selected" : ""}`}
-               onClick={() => this.setView("view_list")}
-            >view_list</i>
+               class={`material-icons${view == "grid" ? " selected" : ""}`}
+               onClick={() => this.setView("grid")}
+            >grid_on</i>
             <i
-               class={`material-icons${view == "view_column" ? " selected" : ""}`}
-               onClick={() => this.setView("view_column")}
+               class={`material-icons${view == "column" ? " selected" : ""}`}
+               onClick={() => this.setView("column")}
             >view_column</i>
          </div>
       );

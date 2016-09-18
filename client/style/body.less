@@ -5,35 +5,73 @@
    height: 99999px; // just be bigger than screen, will overflow anyway
    display: inline-flex;
    overflow-x: scroll;
-}
-.body--content {
-   display: inline-flex;
-}
-.col-s {
-   width: 400px;
-   display: inline-block;
-   margin-left: 10px;
-}
-.col-s:last-child {
-   margin-right: 10px;
-}
-.row-s {
-   padding-top: 10px;
-   box-sizing: border-box;
-}
-.row-s:last-child {
-   padding-bottom: 4px;
-}
-.card {
-  box-shadow: 0 6px 6px rgba(0,0,0,0.23), 20px 10px 20px rgba(0,0,0,0.19);
-  height: 100%;
-  color: @main-color;
-  white-space: pre-wrap;
-  background: @card-background;
-  padding: 10px;
-  box-sizing: border-box;
-  overflow-y: hidden;
-}
-.card + .card {
-   margin-top: 10px;
+   .body--content {
+      display: inline-flex;
+   }
+   .col {
+      display: inline-block;
+      margin-left: 10px;
+      width: 400px;
+      &:last-child {
+         margin-left: 10px;
+      }
+   }
+   .row {
+      padding-top: 10px;
+      box-sizing: border-box;
+      &:last-child {
+         padding-bottom: 5px;
+      }
+   }
+   .view-card {
+     box-shadow: 0 6px 6px rgba(0,0,0,0.23), 20px 10px 20px rgba(0,0,0,0.19);
+     height: 100%;
+     color: @main-color;
+     background: @card-background;
+     padding: 10px;
+     box-sizing: border-box;
+     overflow: hidden;
+     position: relative;
+     cursor: pointer;
+     &+.view-card {
+      margin-top: 10px;
+    }
+     &:hover {
+        background: rgba(40,44,52,0.9);
+        .expand {
+           display: block;
+        }
+     }
+  }
+  .fader {
+     background: linear-gradient(rgba(40,44,52,0), rgba(40,44,52,1));
+     height: 30px;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+  }
+   .expand {
+      background: rgba(40,44,52, 0.8);
+      a {
+         color: #adb6c7;
+         text-decoration: none;
+      }
+      cursor: pointer;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      i {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 100%;
+         font-size: 40px;
+         color: @highlight-color;
+      }
+      height: 100%;
+      width: 100%;
+      display: none;
+      vertical-align: middle;
+   }
 }

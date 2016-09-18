@@ -1,3 +1,5 @@
+@import "./constants";
+
 // https://css-tricks.com/snippets/css/style-placeholder-text/
 // Setting the placeholder's color
 ::-webkit-input-placeholder {
@@ -17,9 +19,13 @@
 ::-webkit-scrollbar {
    height: 8px;
    background: inherit; //#171b1f;
+
 }
 ::-webkit-scrollbar-thumb {
-   // border-radius: 10px;
-   background: #528bff
-   // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+   background: #528bff;
+   z-index: -999;
+}
+
+::selection {
+   background: #528bff;
 }

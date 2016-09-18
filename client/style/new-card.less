@@ -1,0 +1,149 @@
+.card {
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   padding-top: 100px; /* Location of the box */
+   left: 0;
+   top: 0;
+   bottom: 0;
+   width: 100%; /* Full width */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgba(0,0,0,0.85); /* Black w/ opacity */
+   .modal-content {
+      position: relative;
+    margin: auto auto 100px auto;
+    padding: 0px;
+    width: 80%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+   }
+   @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+   &.col {
+      width: 800px;
+   }
+   .input {
+      display: inline-block;
+      width: 50%;
+      padding: 5px;
+      background-color: #21252b;
+      vertical-align: top;
+   }
+   .output {
+      vertical-align: top;
+      display: inline-block;
+      width: 50%;
+      padding: 5px;
+      height: auto;
+      margin-left: 10px;
+      flex-grow: 1;
+      background-color: #21252b;
+  flex-flow: column;
+   }
+   .out-text {
+      overflow: auto;
+      padding: 0 7px;
+      flex: 1;
+         margin-top: 6px;
+         color: #fff;
+         background: #191b1f;
+   }
+   .foot {
+      display: flex;
+      color: #ddd;
+      padding: 5px;
+      .save {
+         margin-left: auto;
+         padding: 5px 10px;
+         background-color: #191a1f;
+         font-size: 16px;
+         cursor: pointer;
+         &:hover {
+            background-color: #090a0f;
+         }
+      }
+   }
+   .del-forever {
+      margin-left: auto;
+      cursor: pointer;
+      color: #922;
+      font-size: 30px;
+   }
+   .del {
+      margin-left: auto;
+      cursor: pointer;
+      font-size: 22px;
+      margin-right: 4px;
+   }
+   .title {
+      color: #999;
+      padding-bottom: 5px;
+      box-sizing: border-box;
+      display: flex;
+      width: 100%;
+      font-weight: 900;
+      align-items: center;
+    height: 30px;
+      .label {
+         margin-left: auto;
+         font-weight: normal;
+      }
+   }
+   .top {
+      display: flex;
+   }
+   .text {
+   color: #ddd;
+   }
+   .card {
+      height: auto;
+      overflow-y: scroll;
+      margin: 10px 0 auto 0;
+      padding-right: 0;
+      position: relative;
+   }
+   .publicCheck {
+      //margin-left: auto;
+      margin-left: 10px;
+      position: relative;
+      display: inline-block;
+      label {
+         width: 20px;
+         height: 20px;
+         cursor: pointer;
+         position: absolute;
+         top: 0;
+         left: 0;
+         background: #111;
+      //   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+         &:after {
+            content: '';
+            width: 9px;
+            height: 5px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            border: 3px solid #fcfff4;
+            border-top: none;
+            border-right: none;
+            background: transparent;
+            opacity: 0;
+            transform: rotate(-45deg);
+         }
+         &:hover::after {
+            opacity: 0.3;
+         }
+      }
+      input[type=checkbox] {
+         visibility: hidden;
+         z-index: 30;
+         &:checked + label:after {
+            opacity: 1;
+         }
+      }
+   }
+}
