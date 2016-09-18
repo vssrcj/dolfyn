@@ -63,7 +63,7 @@ class SelectSearch extends Component {
                type="text"
                ref="search"
                tabIndex="0"
-               placeholder="Why don't you go ahead and search for something..."
+               placeholder="Search for something in a card..."
                value={search}
                onFocus={() => this.setSearchFocus(true) }
                onBlur={() => this.setSearchFocus(false) }
